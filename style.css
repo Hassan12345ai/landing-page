@@ -1037,145 +1037,225 @@ body {
 
 
 
-/* ============================================================
-   RESPONSIVE OVERRIDES
-   ============================================================ */
+/* ---------- Large Laptop / 1200px ---------- */
+@media (max-width: 1200px) {
+  .hero-image,
+  .promo-image {
+    max-width: 90%;
+  }
 
-/* 1. LAPTOP & SMALL DESKTOP (Under 1280px) */
-@media (max-width: 1280px) {
-    .site-nav, .container, .team-grid, .promo-section {
-        max-width: 95%;
-        padding: 15px 20px;
-    }
-
-    .contact-wrapper {
-        width: 95%;
-        height: auto; /* Removes hardcoded height */
-        margin: 0 auto;
-    }
+  .contact-wrapper {
+    width: 100%;
+  }
 }
 
-/* 2. TABLET & SMALL LAPTOP (Under 1024px) */
-@media (max-width: 1024px) {
-    .nav-menu {
-        gap: 20px;
-    }
+/* ---------- Laptop / 991px ---------- */
+@media (max-width: 991px) {
+  .site-nav {
+    padding: 15px 24px;
+  }
 
-    .nav-menu li a {
-        font-size: 16px;
-    }
+  .brand-name {
+    font-size: 28px;
+  }
 
-    .promo-section {
-        padding: 40px;
-    }
+  .nav-menu {
+    gap: 22px;
+  }
 
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
+  .hero-button,
+  .btn-primary {
+    padding: 14px 22px;
+    font-size: 15px;
+  }
 
-    .contact-right {
-        display: none; /* Hide illustrative image on smaller screens to save space */
-    }
+  .services-section {
+    flex-direction: column;
+    gap: 24px;
+  }
 
-    .contact-left {
-        width: 100%;
-    }
+  .service-card {
+    height: auto;
+    padding: 28px;
+  }
+
+  .promo-section {
+    flex-direction: column;
+    padding: 40px;
+    margin: 30px auto;
+  }
+
+  .cases-list {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-item {
+    padding: 30px 40px;
+  }
+
+  .testimonial-item {
+    flex: 0 0 300px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-right {
+    order: -1;
+  }
+
+  .site-footer {
+    padding: 40px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
-/* 3. MOBILE (Under 768px) */
-@media (max-width: 768px) {
-    /* Navbar */
-    .nav-menu {
-        display: none; /* Typically replaced by a hamburger menu in JS */
-    }
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 767px) {
+  .brand-name {
+    font-size: 24px;
+  }
 
-    .site-nav {
-        padding: 15px;
-    }
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
 
-    /* Hero Section */
-    .hero-section {
-        text-align: center;
-        padding: 40px 10px;
-    }
+  .hero-button,
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
 
-    /* Services */
-    .service-card {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        padding: 30px;
-    }
+  .promo-text h2 {
+    font-size: 28px;
+  }
 
-    .service-img {
-        width: 100px;
-        margin-top: 20px;
-    }
+  .promo-text p {
+    font-size: 15px;
+  }
 
-    /* Promo/CTA Box */
-    .promo-section {
-        flex-direction: column;
-        text-align: center;
-        margin: 20px;
-        padding: 30px;
-    }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .promo-text {
-        max-width: 100%;
-    }
+  .process-item {
+    padding: 26px;
+    border-radius: 30px;
+  }
 
-    /* Case Studies */
-    .cases-list {
-        flex-direction: column;
-        padding: 30px;
-    }
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 
-    .cases-divider {
-        width: 100%;
-        height: 1px;
-        margin: 20px 0;
-    }
+  .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+  }
 
-    /* Process Accordion */
-    .process-item {
-        padding: 20px 30px;
-    }
+  .number {
+    font-size: 38px;
+  }
 
-    .number {
-        font-size: 30px;
-    }
+  .title {
+    font-size: 20px;
+  }
 
-    .title {
-        font-size: 20px;
-    }
+  .description {
+    font-size: 15px;
+  }
 
-    /* Team */
-    .team-grid {
-        grid-template-columns: 1fr; /* Stacked cards */
-    }
+  .testimonial-item {
+    flex: 0 0 calc(100% - 40px);
+  }
 
-    /* Testimonials */
-    .testimonial-item {
-        flex: 0 0 100%;
-    }
+  .testimonial-nav {
+    display: none;
+  }
+}
 
-    /* Footer */
-    .footer-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+/* ---------- Extra Small Mobile / 480px ---------- */
+@media (max-width: 480px) {
+  .site-nav {
+    padding: 12px 16px;
+  }
 
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .brand-icon {
+    width: 36px;
+  }
 
-    .footer-newsletter {
-        flex-direction: column;
-    }
+  .brand-name {
+    font-size: 20px;
+  }
 
-    .footer-newsletter input {
-        width: 100%;
-    }
+  .promo-section {
+    padding: 28px;
+    margin: 20px auto;
+  }
+
+  .contact-wrapper {
+    padding: 24px;
+  }
+
+  .contact-submit {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .promo-text h2 {
+    font-size: 26px;
+  }
+
+  .team-img,
+  .team-img-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+
+  .testimonial-item {
+    flex: 0 0 100%;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    width: 100%;
+  }
 }
