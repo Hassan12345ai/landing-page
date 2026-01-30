@@ -1037,225 +1037,135 @@ body {
 
 
 
-/* ---------- Large Laptop / 1200px ---------- */
-@media (max-width: 1200px) {
-  .hero-image,
-  .promo-image {
-    max-width: 90%;
-  }
+/* ============================================================
+   RESPONSIVE LAYOUT (Laptop, Tablet, Mobile)
+   ============================================================ */
 
-  .contact-wrapper {
-    width: 100%;
-  }
+/* 1. UNIVERSAL FIX: Fixed widths ko Fluid (90%) mein badalna */
+@media (max-width: 1300px) {
+    .site-nav, .container, .team-grid, .promo-section, .contact-wrapper {
+        max-width: 90%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-/* ---------- Laptop / 991px ---------- */
-@media (max-width: 991px) {
-  .site-nav {
-    padding: 15px 24px;
-  }
+/* 2. LAPTOP & TABLET (1024px and below) */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .contact-wrapper {
+        height: auto; /* Fixed height khatam */
+        flex-direction: column;
+        padding: 40px 20px;
+    }
 
-  .brand-name {
-    font-size: 28px;
-  }
+    .contact-left, .contact-right {
+        width: 100%;
+    }
 
-  .nav-menu {
-    gap: 22px;
-  }
+    .contact-right {
+        order: -1; /* Image ko form se upar lane ke liye */
+        margin-bottom: 20px;
+    }
 
-  .hero-button,
-  .btn-primary {
-    padding: 14px 22px;
-    font-size: 15px;
-  }
-
-  .services-section {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .service-card {
-    height: auto;
-    padding: 28px;
-  }
-
-  .promo-section {
-    flex-direction: column;
-    padding: 40px;
-    margin: 30px auto;
-  }
-
-  .cases-list {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-item {
-    padding: 30px 40px;
-  }
-
-  .testimonial-item {
-    flex: 0 0 300px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-    gap: 30px;
-    padding: 30px;
-  }
-
-  .contact-left,
-  .contact-right {
-    width: 100%;
-  }
-
-  .contact-right {
-    order: -1;
-  }
-
-  .site-footer {
-    padding: 40px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .footer-links {
-    flex-wrap: wrap;
-  }
-
-  .footer-social {
-    justify-content: flex-start;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 3 ki jagah 2 cards */
+    }
 }
 
-/* ---------- Tablet / Mobile ---------- */
-@media (max-width: 767px) {
-  .brand-name {
-    font-size: 24px;
-  }
+/* 3. MOBILE (768px and below) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .nav-menu {
+        display: none; /* Mobile menu typically hamburger hota hai */
+    }
 
-  .nav-menu {
-    flex-direction: column;
-    width: 100%;
-    gap: 16px;
-  }
+    /* Hero & Services */
+    .hero-section, .services-section {
+        min-height: auto;
+        padding: 50px 0;
+    }
 
-  .hero-button,
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
+    .service-card {
+        flex-direction: column;
+        height: auto; /* Content ke mutabiq height */
+        text-align: center;
+        padding: 30px;
+    }
 
-  .promo-text h2 {
-    font-size: 28px;
-  }
+    .service-img {
+        width: 80px;
+        margin-top: 15px;
+    }
 
-  .promo-text p {
-    font-size: 15px;
-  }
+    /* Promo Section */
+    .promo-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        margin: 20px;
+    }
 
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
+    .promo-text {
+        max-width: 100%;
+    }
 
-  .process-item {
-    padding: 26px;
-    border-radius: 30px;
-  }
+    .promo-image {
+        display: none; /* Choti screen par clutter kam karne ke liye */
+    }
 
-  .header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
+    /* Case Studies */
+    .cases-list {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
 
-  .icon {
-    width: 48px;
-    height: 48px;
-    font-size: 32px;
-  }
+    .cases-divider {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+    }
 
-  .number {
-    font-size: 38px;
-  }
+    /* Process Accordion */
+    .process-item {
+        padding: 25px;
+        border-radius: 25px;
+    }
 
-  .title {
-    font-size: 20px;
-  }
+    .number { font-size: 30px; }
+    .title { font-size: 20px; }
+    .left-content { gap: 15px; }
 
-  .description {
-    font-size: 15px;
-  }
+    /* Team Grid */
+    .team-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
 
-  .testimonial-item {
-    flex: 0 0 calc(100% - 40px);
-  }
+    /* Footer */
+    .site-footer {
+        padding: 40px 20px;
+        text-align: center;
+    }
 
-  .testimonial-nav {
-    display: none;
-  }
-}
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
 
-/* ---------- Extra Small Mobile / 480px ---------- */
-@media (max-width: 480px) {
-  .site-nav {
-    padding: 12px 16px;
-  }
+    .footer-logo, .footer-social {
+        justify-content: center;
+    }
 
-  .brand-icon {
-    width: 36px;
-  }
+    .footer-newsletter {
+        flex-direction: column;
+        padding: 15px;
+    }
 
-  .brand-name {
-    font-size: 20px;
-  }
-
-  .promo-section {
-    padding: 28px;
-    margin: 20px auto;
-  }
-
-  .contact-wrapper {
-    padding: 24px;
-  }
-
-  .contact-submit {
-    padding: 16px;
-    font-size: 15px;
-  }
-
-  .promo-text h2 {
-    font-size: 26px;
-  }
-
-  .team-img,
-  .team-img-wrapper {
-    width: 64px;
-    height: 64px;
-  }
-
-  .testimonial-item {
-    flex: 0 0 100%;
-  }
-
-  .footer-newsletter {
-    flex-direction: column;
-  }
-
-  .footer-newsletter input,
-  .footer-newsletter button {
-    width: 100%;
-  }
+    .footer-newsletter input {
+        width: 100%;
+    }
 }
