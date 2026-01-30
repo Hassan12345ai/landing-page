@@ -835,337 +835,116 @@ body {
     text-decoration: underline;
 }
 
-/* ===================== RESPONSIVE ===================== */
-
-@media (max-width: 1024px) {
-    .contact-wrapper {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .contact-left,
-    .contact-right {
-        width: 100%;
-    }
-
-    .site-footer {
-        padding: 40px 20px;
-    }
-
-    .footer-top {
-        flex-direction: column;
-    }
-
-    .footer-social {
-        justify-content: flex-start;
-    }
-
-    .testimonial-item {
-        flex: 0 0 85%;
-    }
-}
-/* ===================== LARGE DESKTOP (1440px+) ===================== */
-@media (min-width: 1440px) {
-  .site-nav,
-  .container,
-  .team-grid,
-  .contact-wrapper {
-    max-width: 1320px;
-    margin: 0 auto;
-  }
-}
-
-/* ===================== LAPTOP (1024px – 1366px) ===================== */
-@media (max-width: 1366px) {
-  .site-nav {
-    padding: 15px 24px;
-  }
-
-  .nav-menu {
-    gap: 28px;
-  }
-
-  .promo-section {
-    margin: 40px 20px;
-    padding: 50px;
-  }
-
-  .contact-wrapper {
-    width: 100%;
-  }
-}
-
-/* ===================== TABLET (768px – 1023px) ===================== */
-@media (max-width: 1023px) {
-  .nav-menu {
-    display: none;
-  }
-
-  .hero-section {
-    min-height: auto;
-    padding: 60px 0;
-    text-align: center;
-  }
-
-  .services-section {
-    min-height: auto;
-    padding: 60px 0;
-  }
-
-  .service-card {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .promo-section {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .promo-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .cases-list {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .cases-divider {
-    display: none;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .contact-left,
-  .contact-right {
-    width: 100%;
-  }
-}
 
 
-@media (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
+/* ===================== UNIVERSAL RESPONSIVE FIXES ===================== */
 
-  .site-nav {
-    padding: 14px 16px;
-  }
-
-  .brand-name {
-    font-size: 24px;
-  }
-
-  .hero-button,
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .service-card {
-    padding: 24px;
-  }
-
-  .service-img {
-    width: 90px;
-  }
-
-  .promo-section {
-    padding: 30px 20px;
-    border-radius: 24px;
-  }
-
-  .promo-text h2 {
-    font-size: 28px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-card {
-    padding: 24px;
-  }
-
-  .testimonials-box {
-    padding: 1rem;
-  }
-
-  .testimonial-item {
-    flex: 0 0 100%;
-  }
-
-  .contact-wrapper {
-    padding: 20px;
-  }
-
-  .site-footer {
-    padding: 30px 20px;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-}
-
-
-
-
-/* ============================================================
-   RESPONSIVE LAYOUT (Laptop, Tablet, Mobile)
-   ============================================================ */
-
-/* 1. UNIVERSAL FIX: Fixed widths ko Fluid (90%) mein badalna */
-@media (max-width: 1300px) {
-    .site-nav, .container, .team-grid, .promo-section, .contact-wrapper {
-        max-width: 90%;
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* 2. LAPTOP & TABLET (1024px and below) */
-@media (max-width: 1024px) {
-    .nav-menu {
-        gap: 20px;
+@media (max-width: 1100px) {
+    .promo-section, 
+    .contact-wrapper, 
+    .team-grid, 
+    .container {
+        max-width: 95%;
+        margin: 20px auto;
     }
     
-    .contact-wrapper {
-        height: auto; /* Fixed height khatam */
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .contact-left, .contact-right {
-        width: 100%;
-    }
-
-    .contact-right {
-        order: -1; /* Image ko form se upar lane ke liye */
-        margin-bottom: 20px;
-    }
-
     .team-grid {
-        grid-template-columns: repeat(2, 1fr); /* 3 ki jagah 2 cards */
+        grid-template-columns: repeat(2, 1fr); /* Tablet par 2 columns */
     }
 }
 
-/* 3. MOBILE (768px and below) */
 @media (max-width: 768px) {
-    /* Navbar */
+    /* Navbar Adjustment */
+    .site-nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
     .nav-menu {
-        display: none; /* Mobile menu typically hamburger hota hai */
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* Hero & Services */
-    .hero-section, .services-section {
-        min-height: auto;
-        padding: 50px 0;
-    }
-
-    .service-card {
+    /* Promo & Contact Sections (Fixed Width Removal) */
+    .promo-section, .contact-wrapper {
         flex-direction: column;
-        height: auto; /* Content ke mutabiq height */
+        height: auto; /* Fixed height hatani zaroori hai */
+        padding: 30px 20px;
         text-align: center;
-        padding: 30px;
     }
 
-    .service-img {
-        width: 80px;
-        margin-top: 15px;
-    }
-
-    /* Promo Section */
-    .promo-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-        margin: 20px;
-    }
-
-    .promo-text {
+    .promo-text, .contact-left, .contact-right {
+        width: 100%;
         max-width: 100%;
     }
 
     .promo-image {
-        display: none; /* Choti screen par clutter kam karne ke liye */
+        margin-top: 30px;
+        width: 100%;
+        height: auto;
     }
 
-    /* Case Studies */
+    /* Team Grid to Single Column */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cases Section */
     .cases-list {
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 30px;
     }
 
     .cases-divider {
         width: 100%;
         height: 1px;
-        margin: 20px 0;
+        margin: 25px 0;
     }
 
-    /* Process Accordion */
+    /* Process/Accordion Padding */
     .process-item {
         padding: 25px;
-        border-radius: 25px;
     }
 
-    .number { font-size: 30px; }
-    .title { font-size: 20px; }
-    .left-content { gap: 15px; }
-
-    /* Team Grid */
-    .team-grid {
-        grid-template-columns: 1fr; /* Single column layout */
+    .number {
+        font-size: 35px;
     }
 
-    /* Footer */
-    .site-footer {
-        padding: 40px 20px;
-        text-align: center;
+    .title {
+        font-size: 20px;
     }
 
+    /* Footer Adjustment */
     .footer-top {
         flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-logo, .footer-social {
-        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .footer-newsletter {
         flex-direction: column;
-        padding: 15px;
+        width: 100%;
     }
 
     .footer-newsletter input {
         width: 100%;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 24px;
+    }
+    
+    .contact-tabs {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
