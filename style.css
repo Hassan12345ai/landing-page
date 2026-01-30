@@ -837,61 +837,106 @@ body {
 
 
 
-/* ===================== UNIVERSAL RESPONSIVE FIXES ===================== */
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   (Paste this at the bottom of your CSS file)
+   ========================================= */
 
-@media (max-width: 1100px) {
+/* Tablet & Small Laptops (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .site-nav, 
     .promo-section, 
     .contact-wrapper, 
     .team-grid, 
-    .container {
-        max-width: 95%;
-        margin: 20px auto;
+    .container,
+    .cases-list {
+        max-width: 95%; /* Side margins maintain karne ke liye */
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .contact-wrapper {
+        height: auto; /* Fixed height hatayi gayi */
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 3 ki jagah 2 columns */
     }
     
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr); /* Tablet par 2 columns */
+    .promo-section {
+        margin: 20px auto;
+        padding: 40px;
     }
 }
 
+/* Mobile Devices (Max Width: 768px) */
 @media (max-width: 768px) {
-    /* Navbar Adjustment */
+    
+    /* --- Navbar Adjustment --- */
     .site-nav {
         flex-direction: column;
         gap: 20px;
-        padding: 15px;
+        padding: 20px;
     }
 
     .nav-menu {
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
     }
 
-    /* Promo & Contact Sections (Fixed Width Removal) */
-    .promo-section, .contact-wrapper {
-        flex-direction: column;
-        height: auto; /* Fixed height hatani zaroori hai */
-        padding: 30px 20px;
+    .btn-primary {
+        width: 100%; /* Button full width */
         text-align: center;
     }
 
-    .promo-text, .contact-left, .contact-right {
-        width: 100%;
+    /* --- Hero Section --- */
+    .hero-section {
+        text-align: center;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    /* --- Services Section --- */
+    .service-card {
+        flex-direction: column;
+        height: auto; /* Fixed height remove ki */
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .learn-link {
+        justify-content: center;
+    }
+
+    /* --- Promo Section --- */
+    .promo-section {
+        flex-direction: column-reverse; /* Image upar, text neeche */
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+
+    .promo-text, .promo-image {
         max-width: 100%;
+        width: 100%;
     }
 
     .promo-image {
-        margin-top: 30px;
-        width: 100%;
         height: auto;
+        margin-bottom: 20px;
     }
 
-    /* Team Grid to Single Column */
-    .team-grid {
-        grid-template-columns: 1fr;
+    /* --- Cases Section --- */
+    .cases-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 
-    /* Cases Section */
     .cases-list {
         flex-direction: column;
         padding: 30px;
@@ -899,28 +944,74 @@ body {
 
     .cases-divider {
         width: 100%;
-        height: 1px;
-        margin: 25px 0;
+        height: 1px; /* Vertical line ko horizontal banaya */
+        margin: 20px 0;
     }
 
-    /* Process/Accordion Padding */
+    /* --- Process / Accordion --- */
     .process-item {
         padding: 25px;
     }
 
+    .header-row {
+        gap: 15px;
+    }
+
     .number {
-        font-size: 35px;
+        font-size: 40px;
     }
 
     .title {
         font-size: 20px;
     }
 
-    /* Footer Adjustment */
+    .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        flex-shrink: 0; /* Icon ko shrink hone se rokna */
+    }
+
+    /* --- Team Section --- */
+    .team-grid {
+        grid-template-columns: 1fr; /* Mobile par 1 column */
+        gap: 20px;
+    }
+
+    /* --- Contact Form --- */
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%;
+    }
+
+    .contact-right {
+        display: none; /* Mobile par image chhupa di taake form clean dikhe (Optional) */
+    }
+    
+    .contact-tabs {
+        flex-wrap: wrap; /* Tabs agar zyada ho to wrap ho jayein */
+    }
+
+    /* --- Footer --- */
+    .site-footer {
+        padding: 40px 20px;
+        border-radius: 20px 20px 0 0;
+    }
+
     .footer-top {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .footer-newsletter {
@@ -930,21 +1021,21 @@ body {
 
     .footer-newsletter input {
         width: 100%;
+        box-sizing: border-box; /* Padding width mein include ho */
     }
 
-    .footer-links {
-        justify-content: center;
-        margin: 20px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .brand-name {
-        font-size: 24px;
+    .footer-newsletter button {
+        width: 100%;
     }
     
-    .contact-tabs {
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
     }
 }
