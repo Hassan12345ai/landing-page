@@ -961,6 +961,7 @@ body {
   }
 }
 
+
 @media (max-width: 767px) {
   body {
     font-size: 14px;
@@ -1031,4 +1032,150 @@ body {
     gap: 10px;
     text-align: center;
   }
+}
+
+
+
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+/* 1. LAPTOP & SMALL DESKTOP (Under 1280px) */
+@media (max-width: 1280px) {
+    .site-nav, .container, .team-grid, .promo-section {
+        max-width: 95%;
+        padding: 15px 20px;
+    }
+
+    .contact-wrapper {
+        width: 95%;
+        height: auto; /* Removes hardcoded height */
+        margin: 0 auto;
+    }
+}
+
+/* 2. TABLET & SMALL LAPTOP (Under 1024px) */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-menu li a {
+        font-size: 16px;
+    }
+
+    .promo-section {
+        padding: 40px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    .contact-right {
+        display: none; /* Hide illustrative image on smaller screens to save space */
+    }
+
+    .contact-left {
+        width: 100%;
+    }
+}
+
+/* 3. MOBILE (Under 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .nav-menu {
+        display: none; /* Typically replaced by a hamburger menu in JS */
+    }
+
+    .site-nav {
+        padding: 15px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        text-align: center;
+        padding: 40px 10px;
+    }
+
+    /* Services */
+    .service-card {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .service-img {
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    /* Promo/CTA Box */
+    .promo-section {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px;
+        padding: 30px;
+    }
+
+    .promo-text {
+        max-width: 100%;
+    }
+
+    /* Case Studies */
+    .cases-list {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .cases-divider {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+    }
+
+    /* Process Accordion */
+    .process-item {
+        padding: 20px 30px;
+    }
+
+    .number {
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    /* Team */
+    .team-grid {
+        grid-template-columns: 1fr; /* Stacked cards */
+    }
+
+    /* Testimonials */
+    .testimonial-item {
+        flex: 0 0 100%;
+    }
+
+    /* Footer */
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-newsletter {
+        flex-direction: column;
+    }
+
+    .footer-newsletter input {
+        width: 100%;
+    }
 }
